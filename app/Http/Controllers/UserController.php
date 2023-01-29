@@ -1,0 +1,107 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\User;
+class UserController extends Controller
+{
+    public function viewsignup(){
+        return view('sign-up');
+    }
+    public function profile(){
+        $id = auth()->user()->id;
+
+        $user = User::where('id', $id)->first();
+        return view('profile',[
+            'user' => $user,
+            'active' => 'profile'
+        ]);
+    }
+    public function signup(Request $request){
+        $fields = $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+            'contact' => 'required|min:11'
+        ]);
+        $fields['user_type'] = 'user';
+        $fields['password'] = bcrypt($fields['password']);
+        $user = User::create($fields);
+        auth()->login($user);
+
+        return redirect('/')->with('message', 'You have successfully registered and logged in!');
+    }
+    public function customerLogin(Request $request){
+        $fields = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $fields['user_type'] = 'user';
+
+        if(auth()->attempt($fields)){
+            $request->session()->regenerate();
+
+            return redirect('/')->with('message', 'Logged in successfully!');
+        }
+
+        return back()->withErrors(['email' =>'Invalid Credentials'])->onlyInput('email');
+    }
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/admin');
+    }
+
+    public function customerLogout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
+    public function showLogin(){
+        return view('login');
+    }
+
+    public function index(){
+        $users = User::where('user_type', '<>', 'admin')->paginate(5);
+        return view('admin.users',[
+            'active' => 'users',
+            'users' => $users
+        ]);
+    }
+    //adminlogin
+    public function adminLogin(Request $request){
+        $fields = $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        $fields['user_type'] = 'admin';
+
+        if(auth()->attempt($fields)){
+            $request->session()->regenerate();
+            return redirect('/admin/users');
+        }
+        return back()->withErrors(['email'=> 'Invalid Credentials'])->onlyInput('email');
+    }
+
+    //createadmin
+    public function create(){
+        $fields = [
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('password'),
+            'user_type' => 'admin'
+        ];
+
+        $user = User::create($fields);
+
+        return response($user, 200);
+    }
+}

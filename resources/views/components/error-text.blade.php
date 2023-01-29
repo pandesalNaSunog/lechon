@@ -1,0 +1,1 @@
+<p class="text-danger fs-6">{{$slot}}</p>
