@@ -1,10 +1,10 @@
 @props(['active'])
-<nav class="navbar navbar-expand-xl bg-orange navbar-dark sticky-top">
+<nav class="navbar navbar-expand-xxl bg-orange navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-brand d-flex align-items-center">
             <a href="/lolabertarevamp"><img src="/lolabertarevamp/public/storage/images/logo.png" style="height: 70px; width: auto; object-fit: cover" alt=""></a>
             @auth
-                <strong class="ms-3">Welcome, {{auth()->user()->name}}</strong>
+                <strong class="ms-3 fs-1-lg ">Welcome, {{auth()->user()->name}}</strong>
             @endauth
         </div>
         <button class="navbar-toggler" data-bs-target="#navmenu" data-bs-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
@@ -27,6 +27,11 @@
                     <a href="/lolabertarevamp/cart" class="<?php if($active == "cart"){ echo 'active'; } ?> nav-link fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
 </svg><span class="ms-1">My Cart</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="/lolabertarevamp/orders" class="nav-link fw-bold <?php if($active == "my-orders"){ echo 'active'; } ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+</svg><span class="ms-1">My Orders</span></a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">

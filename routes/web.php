@@ -23,6 +23,12 @@ Route::get('/admin/users',[UserController::class, 'index'])->middleware('auth');
 Route::get('/admin', function(){
     return view('admin.login');
 })->middleware('guest');
+Route::get('/orders', [OrderController::class, 'myOrders'])->middleware('auth');
+Route::post('/profile/address',[AddressController::class, 'store'])->middleware('auth');
+Route::get('/profile/edit', [UserController::class, 'showEdit'])->middleware('auth');
+Route::post('/cart/checkout/confirm', [OrderController::class, 'confirmCheckout'])->middleware('auth');
+Route::get('/cart/{cart}/remove',[CartController::class, 'deleteCart'])->middleware('auth');
+Route::put('/cart/{cart}/update-quantity',[CartController::class, 'updateCartQuantity'])->middleware('auth');
 Route::post('/products/{product}/add-to-cart', [CartController::class, 'addToCart'])->middleware('auth');
 Route::get('/products/{product}', [ProductController::class, 'viewProduct']);
 Route::post('/admin/login',[UserController::class, 'adminLogin']);
@@ -40,6 +46,7 @@ Route::post('/signup/register', [UserController::class, 'signup'])->middleware('
 Route::get('/logout',[UserController::class, 'customerLogout'])->middleware('auth');
 Route::get('/profile',[UserController::class,'profile'])->middleware('auth');
 Route::get('/cart',[CartController::class, 'index'])->middleware('auth');
+Route::post('/cart/checkout', [OrderController::class, 'checkout'])->middleware('auth');
 Route::get('/', function(){
     return view('index', [
         'active' => 'home'

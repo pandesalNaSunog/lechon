@@ -4,8 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Address;
 class UserController extends Controller
 {
+    public function showEdit(){
+        $id = auth()->user()->id;
+        $user = User::where('id', $id)->first();
+
+        return view('edit-profile',[
+            'active' => 'edit',
+            'user' => $user
+        ]);
+    }
     public function viewsignup(){
         return view('sign-up');
     }
@@ -13,8 +23,10 @@ class UserController extends Controller
         $id = auth()->user()->id;
 
         $user = User::where('id', $id)->first();
+        $addresses = Address::where('user_id', $id)->get();
         return view('profile',[
             'user' => $user,
+            'addresses' => $addresses,
             'active' => 'profile'
         ]);
     }

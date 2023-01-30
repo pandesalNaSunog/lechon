@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <x-bootstrap-links/>
     <x-style/>
+    <x-jquery/>
     <title>Login</title>
 </head>
 <body class="bg-dark">
+<x-toast/>
     <div id="background">
         <div class="container" style="height: 100%">
             <div class="row row-cols-1 row-cols-lg-2 d-flex align-items-center" style="height: 100%">
@@ -62,5 +64,6 @@
         </div>
         
     </div>
+    
 </body>
 </html>

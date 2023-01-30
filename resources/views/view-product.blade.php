@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <x-bootstrap-links/>
     <x-style/>
+    <x-jquery/>
     <title>View Product | D' Original Lola Berta's Lechon Haus</title>
 </head>
 <body>
     <x-nav :active="$active"/>
-
+    <x-toast/>
     <div class="mt-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-lg-2">
@@ -23,6 +24,7 @@
                     <h3 class="fw-bold text-secondary">&#8369; {{$product->price}}</h3>
                     <hr>
                     <p class="lead">{{$product->description}}</p>
+                    @auth
                     <div class="d-flex">
                         <form method="POST" action="/lolabertarevamp/products/{{$product->id}}/add-to-cart">
                             @csrf
@@ -35,10 +37,14 @@
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 </svg><span class="ms-3">View Cart</span></button>
                     </div>
+                    @else
+                        <p><a href="/lolabertarevamp/login">Sign In</a> to add this product to your cart.</p>
+                    @endauth
                 </div>
             </div>
         </div>
         
     </div>
+   
 </body>
 </html>

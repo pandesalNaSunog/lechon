@@ -1,7 +1,7 @@
 @props(['products'])
 <div class="bg-light py-5">
     <div class="container">
-        <div class="row row-cols-md-2 row-cols-lg-4 g-3" style="margin-top: -80px;">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3" style="margin-top: -80px;">
             @foreach($products as $product)
                 <div class="col">
                     <div class="card shadow">

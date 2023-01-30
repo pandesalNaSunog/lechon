@@ -5,17 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <x-bootstrap-links/>
-    <x-style/>
-    <x-fonts/>
     <x-jquery/>
-    <title>Products | D' Original Lola Berta's Lechon Haus</title>
+    <x-style/>
+    <title>Edit Profile</title>
 </head>
-<body class="bg-dark">
+<body>
     <x-toast/>
     <x-nav :active="$active"/>
-    <x-sub-header :active="$active"/>
-    <x-products-section :products="$products"/>
-    <x-footer-section/>
-    
+    <x-edit-profile-card :user="$user"/>
 </body>
 </html>

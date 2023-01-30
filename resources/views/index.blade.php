@@ -7,11 +7,14 @@
     <x-bootstrap-links/>
     <x-style/>
     <x-fonts/>
+    <x-jquery/>
     <title>D' Original Lola Berta's Lechon Haus</title>
 </head>
 <body class="bg-dark">
+    <x-toast/>
     <x-nav :active="$active"/>
     <x-header/>
     <x-footer-section/>
+    
 </body>
 </html>

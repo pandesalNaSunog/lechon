@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <x-bootstrap-links/>
     <x-style/>
-    <x-fonts/>
     <x-jquery/>
-    <title>Products | D' Original Lola Berta's Lechon Haus</title>
+    <title>Order Summary</title>
 </head>
-<body class="bg-dark">
+<body>
     <x-toast/>
     <x-nav :active="$active"/>
-    <x-sub-header :active="$active"/>
-    <x-products-section :products="$products"/>
-    <x-footer-section/>
+    <x-order-summary-section :addresses="$addresses" :order="$order" :total="$total"/>
     
 </body>
 </html>

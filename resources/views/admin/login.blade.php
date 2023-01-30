@@ -24,7 +24,6 @@
                         <input name="password" type="password" class="form-control mt-3" placeholder="Password">
                         <button class="my-btn fw-bold w-100 py-3 mt-3">Log In</button>
                     </form>
-                    
                 </div>
             </div>
         </div>
