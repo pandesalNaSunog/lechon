@@ -9,6 +9,7 @@
             <input value="{{$user->email}}" type="text" name="email" class="form-control">
             <label class="fw-bold">Contact:</label>
             <input value="{{$user->contact}}" type="text" name="contact" class="form-control">
+            <button class="btn btn-danger mt-3 w-100">Confirm</button>
         </div>
     </div>
 </div>

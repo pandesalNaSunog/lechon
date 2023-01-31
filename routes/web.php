@@ -23,6 +23,16 @@ Route::get('/admin/users',[UserController::class, 'index'])->middleware('auth');
 Route::get('/admin', function(){
     return view('admin.login');
 })->middleware('guest');
+
+Route::get('/pricelist', function(){
+    return view('pricelist',[
+        'active' => 'pricelist'
+    ]);
+});
+
+
+
+Route::post('/orders/{order}/add-status', [OrderController::class, 'addOrderStatus'])->middleware('auth');
 Route::get('/orders', [OrderController::class, 'myOrders'])->middleware('auth');
 Route::post('/profile/address',[AddressController::class, 'store'])->middleware('auth');
 Route::get('/profile/edit', [UserController::class, 'showEdit'])->middleware('auth');
@@ -31,6 +41,8 @@ Route::get('/cart/{cart}/remove',[CartController::class, 'deleteCart'])->middlew
 Route::put('/cart/{cart}/update-quantity',[CartController::class, 'updateCartQuantity'])->middleware('auth');
 Route::post('/products/{product}/add-to-cart', [CartController::class, 'addToCart'])->middleware('auth');
 Route::get('/products/{product}', [ProductController::class, 'viewProduct']);
+Route::get('/admin/orders',[OrderController::class, 'adminOrders'])->middleware('auth');
+Route::get('/admin/orders/{order}',[OrderController::class, 'showOrder'])->middleware('auth');
 Route::post('/admin/login',[UserController::class, 'adminLogin']);
 Route::get('/admin/logout', [UserController::class, 'logout']);
 Route::get('/admin/inventory',[ProductController::class, 'adminProductsIndex'])->middleware('auth');
@@ -48,6 +60,12 @@ Route::get('/profile',[UserController::class,'profile'])->middleware('auth');
 Route::get('/cart',[CartController::class, 'index'])->middleware('auth');
 Route::post('/cart/checkout', [OrderController::class, 'checkout'])->middleware('auth');
 Route::get('/', function(){
+    if(auth()->user() != null){
+        if(auth()->user()->user_type == 'admin'){
+            auth()->logout();
+        }
+    }
+    
     return view('index', [
         'active' => 'home'
     ]);

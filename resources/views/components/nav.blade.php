@@ -1,6 +1,6 @@
 @props(['active'])
 <nav class="navbar navbar-expand-xxl bg-orange navbar-dark sticky-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-brand d-flex align-items-center">
             <a href="/lolabertarevamp"><img src="/lolabertarevamp/public/storage/images/logo.png" style="height: 70px; width: auto; object-fit: cover" alt=""></a>
             @auth
@@ -16,6 +16,12 @@
                     <a href="/lolabertarevamp" class="nav-link <?php if($active == "home"){ echo 'active'; } ?> fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                     <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
                     </svg><span class="ms-1">Home</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/lolabertarevamp/pricelist" class="nav-link fw-bold <?php if($active == "pricelist"){ echo 'active'; } ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+  <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+</svg><span class="ms-1">Pricelist</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="/lolabertarevamp/products" class="nav-link <?php if($active == "products"){ echo 'active'; } ?> fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check-fill" viewBox="0 0 16 16">

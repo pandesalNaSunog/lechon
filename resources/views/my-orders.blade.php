@@ -13,6 +13,13 @@
     <x-toast/>
     <x-nav :active="$active"/>
     <x-sub-header :active="$active"/>
-    <x-orders-section :orders="$orders"/>
+    <x-orders-section :order_list="$order_list"/>
+    <div class="bg-light py-5">
+        <div class="container">
+            {{$orders->links()}}
+        </div>
+        
+    </div>
+    <x-footer-section/>
 </body>
 </html>

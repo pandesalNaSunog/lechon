@@ -1,5 +1,5 @@
 <div id="header" style="height: 80vh; width: 100%">
-    <div class="d-flex align-items-center" style="height: 100%; width: 100vw">
+    <div class="d-flex align-items-center" style="height: 100%; width: 100%">
         <div class="container">
             <div class="text-center w-100">
                 <img class="img-fluid" src="public/storage/images/logo.png" alt="">

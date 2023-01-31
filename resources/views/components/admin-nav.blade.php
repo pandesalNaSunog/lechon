@@ -15,6 +15,9 @@
                     <a href="/lolabertarevamp/admin/inventory" class="fw-bold nav-link <?php if($active == "inventory"){ echo 'active'; } ?>">Inventory</a>
                 </li>
                 <li class="nav-item">
+                    <a href="/lolabertarevamp/admin/orders" class="fw-bold nav-link <?php if($active == "orders"){ echo 'active'; } ?>">Orders</a>
+                </li>
+                <li class="nav-item">
                     <a href="/lolabertarevamp/admin/logout" class="fw-bold nav-link">Log Out</a>
                 </li>
             </ul>

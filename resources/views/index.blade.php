@@ -14,6 +14,8 @@
     <x-toast/>
     <x-nav :active="$active"/>
     <x-header/>
+    <x-advertisements></x-advertisements>
+    <x-history/>
     <x-footer-section/>
     
 </body>

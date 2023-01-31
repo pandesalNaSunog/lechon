@@ -1,12 +1,40 @@
-@props(['orders'])
+@props(['order_list'])
 <div class="bg-light py-5">
     <div class="container">
+        @if(count($order_list) == 0)
+        <h3 class="text-muted py-5 text-center">Empty</h3>
+        @endif
         <div class="row row-cols-1 row-cols-md-2 g-3">
-            @foreach($orders as $order)
+            
+            @foreach($order_list as $order)
             <div class="col">
                 <div class="card shadow">
                     <div class="card-body">
-                        {{$order->product_ids}}
+                        <strong style="font-size: 15px">{{$order['date']}}</strong>
+                        @php
+                        $products = $order['products'];
+                        @endphp
+                        @foreach($products as $product)
+                        <div class="card shadow mt-3">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <img src="/lolabertarevamp/public/storage/{{$product['image']}}" style="height: 100px; width: 100px; object-fit: cover"alt="" class="img-fluid">
+                                    <div class="ms-3">
+                                        <h5 class="fw-bold text-muted">{{$product['name']}}</h5>
+                                        <i>Quantity: {{$product['quantity']}}</i>
+                                        <p class="text-danger">&#8369; {{$product['price']}}</p>
+                                    </div>
+                                    <div class="align-self-center ms-auto">
+                                        <p class="fw-bold text-danger">Total: &#8369; {{$product['total']}}</p>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="card-footer">
+                        <x-order-status :statuses="$order['statuses']"></x-order-status>
                     </div>
                 </div>
             </div>

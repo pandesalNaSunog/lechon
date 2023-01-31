@@ -32,6 +32,9 @@
         height: 100vh;
         width: 100%;
     }
+    .nunito{
+        font-family: 'Nunito';
+    }
 
     #background::before{
         content: '';

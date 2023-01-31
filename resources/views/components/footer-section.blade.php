@@ -2,14 +2,15 @@
     <div class="container">
         <div class="py-5">
             <div class="row row-cols-1 row-cols-lg-3">
-                <div class="col">
-                    <img src="/lolabertarevamp/public/storage/images/logo.png" alt="" class="img-fluid">
+                <div class="mt-5 mt-lg-0 col text-center text-lg-start">
+                    <img src="/lolabertarevamp/public/storage/images/logo.png" style="height: 130px; width: auto;" alt="" class="img-fluid">
+                    <p class="text-light mt-3 me-0 me-lg-5">𝑇ℎ𝑒 𝑝𝑖𝑔 𝑖𝑠 𝑐𝑜𝑜𝑘𝑒𝑑 𝑜𝑛𝑙𝑦 𝑎𝑠 𝑡ℎ𝑒 𝑜𝑟𝑑𝑒𝑟 𝑐𝑜𝑚𝑒𝑠 𝑖𝑛. 𝑇ℎ𝑒 𝑝𝑖𝑔 𝑖𝑠 𝑠𝑡𝑢𝑓𝑓𝑒𝑑 𝑎𝑛𝑑 𝑟𝑜𝑎𝑠𝑡𝑒𝑑 𝑡ℎ𝑒 𝑜𝑙𝑑-𝑓𝑎𝑠ℎ𝑖𝑜𝑛𝑒𝑑 𝑤𝑎𝑦 𝑜𝑣𝑒𝑟 𝑎 𝑝𝑖𝑡 𝑜𝑓 𝑠𝑚𝑜𝑙𝑑𝑒𝑟𝑖𝑛𝑔 𝑐ℎ𝑎𝑟𝑐𝑜𝑎𝑙 𝑖𝑛 𝑡ℎ𝑒 𝑓𝑎𝑚𝑖𝑙𝑦'𝑠 𝑜𝑤𝑛 𝑏𝑎𝑐𝑘𝑦𝑎𝑟𝑑, 𝑡𝑜 𝑎𝑠𝑠𝑢𝑟𝑒 𝑡ℎ𝑒 𝑙𝑒𝑐ℎ𝑜𝑛'𝑠 𝑐𝑜𝑛𝑠𝑖𝑠𝑡𝑒𝑛𝑐𝑦 𝑎𝑛𝑑 𝑞𝑢𝑎𝑙𝑖𝑡𝑦.</p>
                 </div>
-                <div class="col d-flex align-items-center text-center">
-                    <div class="text-light">
+                <div class="mt-5 mt-lg-0 col d-flex align-items-center text-center">
+                    <div class="text-light mx-auto mx-lg-0">
                         <div>
                             <span class="text-light me-3 fs-5">Follow us on: </span>
-                            <a class="text-light" style="text-decoration: none" href="https://web.facebook.com/lolabertaslechon">
+                            <a target="_blank" class="text-light" style="text-decoration: none" href="https://web.facebook.com/lolabertaslechon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                                 </svg>
@@ -24,12 +25,26 @@
                     </div>
                     
                 </div>
-                <div class="col text-light d-flex align-items-center">
-                    <div>
-                        <h4>Contact Us:</h4>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                        </svg><span class="ms-3">0908 485 1397</span>
+                <div class="mt-5 mt-lg-0 col text-light d-flex align-items-center">
+                    <div class="mx-auto text-center text-lg-start">
+                        <h4 class="fw-bold mb-5">Contact Us:</h4>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            </svg><span class="ms-3">0908 485 1397</span>
+                        </div>
+                        <div class="mt-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                            </svg><span class="ms-3">lolabertaslechonhaus@gmail.com</span>
+                        </div>
+                        <div class="mt-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg><span class="ms-3">19 F. Imson Street, Brgy San Pedro, Pateros, Philippines</span>
+                        </div>
+                        
+                        
                     </div>
                     
                 </div>
