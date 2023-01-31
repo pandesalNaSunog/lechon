@@ -22,16 +22,20 @@
                                 @foreach($carts as $cart)
                                 <div class="col">
                                     <div class="card shadow">
-                                        <div class="card-body d-flex">
-                                            <img style="height: 100px; width: 100px; object-fit: cover" src="public/storage/{{$cart['image']}}" alt="" class="img-fluid">
-                                            <div class="ms-2">
-                                                <h3 class="fw-bold text-secondary">{{$cart['name']}}</h3>
-                                                <i>Available: {{$cart['available']}}</i><br>
-                                                
+                                        <div class="card-body">
+                                            <div class="d-flex">
+                                                <img style="height: 100px; width: 100px; object-fit: cover" src="public/storage/{{$cart['image']}}" alt="" class="img-fluid">
+                                                <div class="ms-2">
+                                                    <h3 class="fw-bold text-secondary">{{$cart['name']}}</h3>
+                                                    <i>Available: {{$cart['available']}}</i><br>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="ms-auto">
                                                 <form action="/lolabertarevamp/cart/{{$cart['id']}}/update-quantity" method="POST">
                                                     @csrf
                                                     @method('PUT')
-                                                    <div class="input-group">
+                                                    <div class="input-group mt-3">
                                                         <span class="input-group-text">Quantity:</span>
                                                         <input name="quantity" type="number" value="{{$cart['quantity']}}" class="form-control">
                                                         
@@ -39,12 +43,8 @@
                                                     </div>
                                                     
                                                 </form>
-                                                
-                                                
-                                            </div>
-                                            <div class="ms-auto">
                                                 <a href="/lolabertarevamp/cart/{{$cart['id']}}/remove">
-                                                    <button class="btn btn-danger">Remove</button>
+                                                    <button class="btn btn-danger w-100 mt-3">Remove</button>
                                                 </a>
                                                 
                                             </div>

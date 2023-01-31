@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Freebee;
 class ProductController extends Controller
 {
     public function index(){
@@ -15,8 +16,10 @@ class ProductController extends Controller
     }
     public function adminProductsIndex(){
         $products = Product::latest()->filter(request(['search']))->paginate(5);
+        $freebies = Freebee::latest()->paginate(5);
         return view('admin.products',[
             'active' => 'inventory',
+            'freebies' => $freebies,
             'products' => $products
         ]);
     }

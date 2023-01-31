@@ -10,6 +10,11 @@
     #header{
         position:relative;
     }
+    .rounded-footer-icons{
+        padding: 10px;
+        background-color: darkred;
+        border-radius: 50%;
+    }
     #header::before{
         content: '';
         top: 0;

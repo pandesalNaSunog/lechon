@@ -1,16 +1,14 @@
 @props(['active'])
 <nav class="navbar navbar-expand-xxl bg-orange navbar-dark sticky-top">
-    <div class="container-fluid">
+    <div class="container">
         <div class="navbar-brand d-flex align-items-center">
             <a href="/lolabertarevamp"><img src="/lolabertarevamp/public/storage/images/logo.png" style="height: 70px; width: auto; object-fit: cover" alt=""></a>
-            @auth
-                <strong class="ms-3 fs-1-lg ">Welcome, {{auth()->user()->name}}</strong>
-            @endauth
         </div>
+        <x-search/>
         <button class="navbar-toggler" data-bs-target="#navmenu" data-bs-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
         <div id="navmenu" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
-                <x-search/>
+                
 
                 <li class="nav-item">
                     <a href="/lolabertarevamp" class="nav-link <?php if($active == "home"){ echo 'active'; } ?> fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">

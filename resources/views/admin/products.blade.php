@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <x-bootstrap-links/>
     <x-style/>
+    <x-jquery></x-jquery>
     <title>Admin | Products</title>
 </head>
 <body>
+    <x-toast></x-toast>
     <x-admin-nav :active="$active"/>
     <x-section-cards :active="$active">
         <x-admin-products-table :products="$products"/>
@@ -21,6 +23,8 @@
     <div class="container">
         <a href="../admin/add-product"><button class="btn btn-danger px-5 fw-bold">Add Product</button></a>
     </div>
+
+    <x-admin-freebees :freebies="$freebies"></x-admin-freebees>
     
     
 </body>

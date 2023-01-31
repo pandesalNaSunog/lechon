@@ -1,4 +1,4 @@
-<li class="nav-item me-3">
+
     <form action="/lolabertarevamp/products" method="GET">
         <div class="input-group">
             
@@ -8,4 +8,3 @@
             
         </div>
     </form>
-</li>

@@ -13,5 +13,9 @@
     <x-section-cards :active="$active">
         <x-admin-orders-section :order_data="$order_data"/>
     </x-section-cards>
+    <div class="container mt-3">
+        {{$orders->links()}}
+    </div>
+    
 </body>
 </html>

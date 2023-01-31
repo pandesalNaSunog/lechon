@@ -1,6 +1,6 @@
 <div class="bg-light py-5">
     <div class="container">
-        <div class="row row-cols-1 row-cols-lg-2 g-5">
+        <div class="row row-cols-1 row-cols-lg-2 g-1">
             <div class="col d-flex">
                 <div class="align-self-center">
                     <h1 class="w-100 fw-bold nunito text-danger">The Origins of D' Original</h1>

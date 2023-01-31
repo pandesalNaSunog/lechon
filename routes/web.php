@@ -29,9 +29,9 @@ Route::get('/pricelist', function(){
         'active' => 'pricelist'
     ]);
 });
-
-
-
+Route::delete('/admin/inventory/freebie/{freebie}/delete', [FreebeeController::class, 'destroy'])->middleware('auth');
+Route::post('/admin/inventory/add-freebee/add',[FreebeeController::class, 'store'])->middleware('auth');
+Route::get('/admin/inventory/add-freebee',[FreebeeController::class, 'create'])->middleware('auth');
 Route::post('/orders/{order}/add-status', [OrderController::class, 'addOrderStatus'])->middleware('auth');
 Route::get('/orders', [OrderController::class, 'myOrders'])->middleware('auth');
 Route::post('/profile/address',[AddressController::class, 'store'])->middleware('auth');
