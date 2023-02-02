@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Cart;
+use App\Models\Freebee;
 class CartController extends Controller
 {
     public function deleteCart(Cart $cart){
@@ -32,7 +33,7 @@ class CartController extends Controller
     public function index(){
         $userId = auth()->user()->id;
         $carts = Cart::where('user_id', $userId)->get();
-
+        $freebies = Freebee::all();
         $data = array();
         foreach($carts as $cart){
             $productId = $cart->product_id;
@@ -44,12 +45,14 @@ class CartController extends Controller
                 'name' => $product->name,
                 'price' => $product->price,
                 'available' => $product->quantity,
-                'quantity' => $cart->quantity
+                'quantity' => $cart->quantity,
+                'has_freebie' => $product->has_freebie
             ];
         }
         return view('cart', [
             'carts' => $data,
-            'active' => 'cart'
+            'active' => 'cart',
+            'freebies' => $freebies
         ]);
     }
 

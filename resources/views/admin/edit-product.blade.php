@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <x-bootstrap-links/>
     <x-style/>
+    <x-jquery/>
     <title>Administrator | Edit Product</title>
 </head>
 <body>
@@ -37,6 +38,15 @@
                     @enderror
                     <label class="fw-bold mt-3">Quantity:</label>
                     <input type="number" class="form-control" name="quantity" value="{{$product->quantity}}">
+                    <div class="form-check mt-3">
+                        <input <?php if($product->has_freebie == 'yes'){ echo 'checked'; } ?> id="has-freebie" type="checkbox" class="form-check-input">
+                        <label for="has_freebie" class="form-check-lable">Has Freebie</label>
+                    </div>
+
+                    <input <?php if($product->has_freebie == 'yes') { echo 'value="yes"'; }else{ echo 'value="no"'; } ?> type="hidden" name="has_freebie" id="has-freebie-input">
+                    @error('has_freebie')
+                    <x-error-text>{{$message}}</x-error-text>
+                    @enderror
                     @error('quantity')
                     <x-error-text>{{$message}}</x-error-text>
                     @enderror
@@ -52,6 +62,7 @@
                 
             </div>
         </div>
+        <x-has-freebie-script></x-has-freebie-script>
     </div>
 </body>
 </html>

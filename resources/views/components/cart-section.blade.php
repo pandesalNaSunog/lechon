@@ -32,6 +32,14 @@
                                             </div>
                                             
                                             <div class="ms-auto">
+                                                @if($cart['has_freebie'] == 'yes')
+                                                <label for="freebie" class="fw-bold mt-3">Select a Freebie: </label>
+                                                    <select name="freebie" class="form-select">
+                                                        @foreach($freebies as $freebie)
+                                                            <option value="{{$freebie->id}}">{{$freebie->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                @endif
                                                 <form action="/lolabertarevamp/cart/{{$cart['id']}}/update-quantity" method="POST">
                                                     @csrf
                                                     @method('PUT')

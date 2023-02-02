@@ -36,13 +36,8 @@
                 
             </div>
             <div class="card-footer">
-                <ul>
-                    @foreach($statuses as $status)
-                        <li>
-                            <p class="lh-sm">{{$status->status}}<br><span style="font-size: 10px">{{$status->created_at->format('M d, Y h:i A')}}</span></p>
-                        </li>
-                    @endforeach
-                </ul>
+                <x-order-status :status="$status"></x-order-status>
+                
                 <form action="/lolabertarevamp/orders/{{$orderlist['id']}}/add-status" method="POST">
                     @csrf
                     <label class="fw-bold">Add Order Status:</label>

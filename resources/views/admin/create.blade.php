@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <x-bootstrap-links/>
     <x-style/>
+    <x-jquery/>
     <title>Administrator | Add Product</title>
 </head>
 <body>
@@ -39,6 +40,15 @@
                     @error('quantity')
                     <x-error-text>{{$message}}</x-error-text>
                     @enderror
+
+                    <div class="form-check mt-3">
+                        <input id="has-freebie" type="checkbox" name="has_freebie" class="form-check-input">
+                        <label for="has_freebie" class="form-check-lable">Has Freebie</label>
+                    </div>
+                    <input value="no" type="hidden" name="has_freebie" id="has-freebie-input">
+                    @error('has_freebie')
+                    <x-error-text>{{$message}}</x-error-text>
+                    @enderror
                     <label class="fw-bold mt-3">Product Image:</label>
                     <input type="file" class="form-control" name="image">
                     @error('image')
@@ -46,9 +56,9 @@
                     @enderror
                     <button class="btn btn-danger mt-3 fw-bold w-100">Confirm</button>
                 </form>
-                
             </div>
         </div>
     </div>
+    <x-has-freebie-script></x-has-freebie-script>
 </body>
 </html>

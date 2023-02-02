@@ -13,7 +13,7 @@
     <x-toast/>
     <x-nav :active="$active"/>
     <x-sub-header :active="$active"/>
-    <x-cart-section :carts="$carts"/>
+    <x-cart-section :freebies="$freebies" :carts="$carts"/>
     <x-footer-section/>
     
 </body>

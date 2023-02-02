@@ -7,6 +7,9 @@ use App\Models\Product;
 use App\Models\Freebee;
 class ProductController extends Controller
 {
+    public function updateHasFreebie(Request $request){
+        
+    }
     public function index(){
         $products = Product::latest()->filter(request(['search']))->paginate(4);
         return view('products',[
@@ -37,6 +40,7 @@ class ProductController extends Controller
             'description' => 'required',
             'quantity' => 'required',
             'price' => 'required',
+            'has_freebie' => 'required'
         ]);
 
 
@@ -67,6 +71,7 @@ class ProductController extends Controller
             'description' => 'required',
             'quantity' => 'required',
             'price' => 'required',
+            'has_freebie' => 'required'
         ]);
 
         if($request->hasFile('image')){

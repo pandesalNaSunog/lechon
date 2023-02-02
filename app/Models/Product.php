@@ -14,7 +14,8 @@ class Product extends Model
         'description',
         'quantity',
         'image',
-        'price'
+        'price',
+        'has_freebie'
     ];
 
     public function scopeFilter($query, array $filters){
