@@ -11,16 +11,20 @@
                 @foreach($order as $orderItem)
 
                 <div class="card shadow mt-3">
-                    <div class="card-body d-flex">
-                        <img style="height: 100px; width: 100px; object-fit: cover" src="../public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
-                        <div class="ms-2">
-                            <h3 class="fw-bold text-secondary">{{$orderItem['name']}}</h3>
-                            <i>Quantity: {{$orderItem['quantity']}}</i><br>
-                            <p class="text-danger">&#8369; {{$orderItem['price']}}</p>
-                            
-                            
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img style="height: 100px; width: 100px; object-fit: cover" src="../public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
+                            <div class="ms-2">
+                                <h3 class="fw-bold text-secondary">{{$orderItem['name']}}</h3>
+                                <i>Quantity: {{$orderItem['quantity']}}</i><br>
+                                <p class="text-danger">&#8369; {{$orderItem['price']}}</p>
+                                
+                                @if($orderItem['freebie'] != "0")
+                                <p>Added Freebie: <strong>{{$orderItem['freebie']}}</strong></p>
+                                @endif
+                            </div>
+                            <h6 class="align-self-center ms-auto text-danger fw-bold">&#8369; {{$orderItem['total']}}</h6>
                         </div>
-                        <h6 class="align-self-center ms-auto text-danger fw-bold">&#8369; {{$orderItem['total']}}</h6>
                     </div>
                 </div>
                                     

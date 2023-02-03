@@ -9,8 +9,58 @@ use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Address;
 use App\Models\OrderStatus;
+use App\Models\Freebee;
 class OrderController extends Controller
 {
+    public function showSales(){
+        $orders = Order::orderBy('created_at','asc')->filter(request(['year']))->get();
+        $sales = array();
+        if(request('year') == null){
+            $year = now()->format('Y');
+        }else{
+            $year = request('year');
+        }
+        $salesPerMonth = 0;
+        $previousMonth = "";
+        $currentMonth = "";
+        foreach($orders as $key => $orderItem){
+            //assign current month
+            $currentMonth = $orderItem->created_at->format('M');
+
+            //if previous month is not blank and previous month is not equal to current month, then finish accumulation and reset everything
+            if(($previousMonth != "" && $previousMonth != $currentMonth)){
+                
+                $months[] = $previousMonth;
+                $sales[] = $salesPerMonth;
+                $salesPerMonth = 0;
+            }
+
+            //calculate sales per order item
+            $productIds = explode('*', $orderItem->product_ids);
+            $quantities = explode('*', $orderItem->quantities);
+            foreach($productIds as $key => $productId){
+                $product = Product::where('id', $productId)->first();
+                $quantity = $quantities[$key];
+                $salesPerMonth += $product->price * $quantity;
+            }
+            $previousMonth = $currentMonth;
+        }
+        $months[] = $previousMonth;
+        $sales[] = $salesPerMonth;
+
+       
+        $data = [
+            'months' => $months,
+            'sales' => $sales,
+            'color' => 'red',
+            'year' => $year
+        ];
+
+        return view('admin.sales-report',[
+            'sales_data' => $data,
+            'active' => 'sales'
+        ]);
+    }
     public function addOrderStatus(Request $request, Order $order){
         $fields = $request->validate([
             'status' => 'required'
@@ -27,18 +77,27 @@ class OrderController extends Controller
         $statuses = OrderStatus::where('order_id', $order->id)->get();
         $productIds = explode('*', $order->product_ids);
         $quantities = explode('*', $order->quantities);
+        $freebieIds = explode('*', $order->freebie_ids);
         $grandTotal = 0;
         $productList = array();
         foreach($productIds as $key => $productId){
             $product = Product::where('id', $productId)->first();
             $quantity = $quantities[$key];
+            $freebie = Freebee::where('id', $freebieIds[$key])->first();
+
+            if($freebie){
+                $freebieName = $freebie->name;
+            }else{
+                $freebieName = "0";
+            }
             $total = $product->price * $quantity;
             $productList[] = [
                 'image' => $product->image,
                 'name' => $product->name,
                 'quantity' => $quantity,
                 'price' => number_format($product->price, 2),
-                'total' => number_format($total, 2)
+                'total' => number_format($total, 2),
+                'freebie' => $freebieName
             ];
             $grandTotal += $total;
         }
@@ -94,9 +153,17 @@ class OrderController extends Controller
         foreach($orders as $order){
             $productIds = explode('*', $order->product_ids);
             $quantities = explode('*', $order->quantities);
+            $freebieIds = explode('*', $order->freebie_ids);
             $statuses = OrderStatus::where('order_id', $order->id)->get();
             $productList = array();
             foreach($productIds as $key => $productId){
+                $freebie = Freebee::where('id', $freebieIds[$key])->first();
+
+                if($freebie){
+                    $freebieName = $freebie->name;
+                }else{
+                    $freebieName = "0";
+                }
                 $product = Product::where('id', $productId)->first();
                 $quantity = $quantities[$key];
                 $total = $product->price * $quantity;
@@ -105,7 +172,8 @@ class OrderController extends Controller
                     'name' => $product->name,
                     'quantity' => $quantity,
                     'price' => number_format($product->price, 2),
-                    'total' => number_format($total, 2)
+                    'total' => number_format($total, 2),
+                    'freebie' => $freebieName
                 ];
             }
             $orderList[] = [
@@ -137,6 +205,7 @@ class OrderController extends Controller
         $carts = Cart::where('user_id', $userId)->get();
         $productIds = "";
         $quantities = "";
+        $freebieIds = "";
 
         
 
@@ -145,9 +214,11 @@ class OrderController extends Controller
             if(count($carts) != $key + 1){
                 $productIds .= $cart->product_id . "*";
                 $quantities .= $cart->quantity . "*";
+                $freebieIds .= $cart->freebie_id . "*";
             }else{
                 $productIds .= $cart->product_id;
                 $quantities .= $cart->quantity;
+                $freebieIds .= $cart->freebie_id;
             }
             $newQuantity = $product->quantity - $cart->quantity;
             $product->update([
@@ -159,7 +230,8 @@ class OrderController extends Controller
             'quantities' => $quantities,
             'user_id' => $userId,
             'delivery_address' => $deliveryAddress,
-            'order_type' => $orderType
+            'order_type' => $orderType,
+            'freebie_ids' => $freebieIds,
         ];
 
         Order::create($fields);
@@ -179,6 +251,12 @@ class OrderController extends Controller
             $productId = $cart->product_id;
 
             $product = Product::where('id', $productId)->first();
+            $freebie = Freebee::where('id', $cart->freebie_id)->first();
+            if($freebie){
+                $freebieName = $freebie->name;
+            }else{
+                $freebieName = "0";
+            }
             $total = $cart->quantity * $product->price;
             $data[] = [
                 'id' => $cart->id,
@@ -187,7 +265,8 @@ class OrderController extends Controller
                 'price' => $product->price,
                 'available' => $product->quantity,
                 'quantity' => $cart->quantity,
-                'total' => number_format($total,2)
+                'total' => number_format($total,2),
+                'freebie' => $freebieName
             ];
             $grandTotal += $total;
         }

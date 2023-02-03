@@ -28,7 +28,9 @@
                                         <p class="fw-bold text-danger">Total: &#8369; {{$product['total']}}</p>
                                     </div>
                                 </div>
-                               
+                                @if($product['freebie'] != 0)
+                                <p><strong>Added Freebie: </strong>{{$product['freebie']}}</p>
+                                @endif
                             </div>
                         </div>
                         @endforeach

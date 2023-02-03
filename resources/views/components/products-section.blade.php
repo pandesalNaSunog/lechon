@@ -1,6 +1,16 @@
 @props(['products'])
 <div class="bg-light py-5">
     <div class="container">
+
+
+        
+        
+        @if(count($products) == 0)
+            <div class="py-5">
+            
+                <h3 class="fw-bold text-muted text-center">Empty</h3>
+            </div>
+        @endif
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3" style="margin-top: -80px;">
             @foreach($products as $product)
                 <div class="col">
@@ -16,6 +26,10 @@
                 </div>
             @endforeach
         </div>
+       
+        
+        
+        
         <div class="py-2">
             {{$products->links()}}
         </div>

@@ -12,8 +12,15 @@ class Order extends Model
     protected $fillable = [
         'product_ids',
         'quantities',
+        'freebie_ids',
         'user_id',
         'order_type',
         'delivery_address'
     ];
+
+    public function scopeFilter($query, array $filters){
+        if($filters['year'] ?? false){
+            $query->where('created_at', 'like', request('year') . '%');
+        }
+    }
 }

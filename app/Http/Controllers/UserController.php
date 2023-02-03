@@ -109,7 +109,8 @@ class UserController extends Controller
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
-            'user_type' => 'admin'
+            'user_type' => 'admin',
+            'contact' => ''
         ];
 
         $user = User::create($fields);

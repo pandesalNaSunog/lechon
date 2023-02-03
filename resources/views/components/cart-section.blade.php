@@ -32,14 +32,6 @@
                                             </div>
                                             
                                             <div class="ms-auto">
-                                                @if($cart['has_freebie'] == 'yes')
-                                                <label for="freebie" class="fw-bold mt-3">Select a Freebie: </label>
-                                                    <select name="freebie" class="form-select">
-                                                        @foreach($freebies as $freebie)
-                                                            <option value="{{$freebie->id}}">{{$freebie->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                @endif
                                                 <form action="/lolabertarevamp/cart/{{$cart['id']}}/update-quantity" method="POST">
                                                     @csrf
                                                     @method('PUT')
@@ -51,8 +43,30 @@
                                                     </div>
                                                     
                                                 </form>
+                                                @if($cart['has_freebie'] == 'yes')
+                                                <form action="/lolabertarevamp/cart/{{$cart['id']}}/add-freebie" method="POST">
+                                                    @csrf
+                                                    <label for="freebie" class="fw-bold mt-3">Select a Freebie: </label>
+                                                    <div class="input-group">
+                                                        <select name="freebie" class="form-select">
+                                                            <option value=0 <?php if($cart['freebie_id'] == 0){ echo 'selected'; }?>>None</option>
+                                                            @foreach($freebies as $freebie)
+                                                                <option value="{{$freebie->id}}" <?php if($cart['freebie_id'] == $freebie->id){ echo 'selected'; } ?>>{{$freebie->name}}</option>
+                                                            @endforeach
+                                                            
+                                                        </select>
+                                                        @error('freebie')
+                                                        <x-error-text>{{$message}}</x-error-text>
+                                                        @enderror
+                                                        <button class="btn btn-outline-danger">Confirm</button>
+                                                    </div>
+                                                </form>
+                                                    
+                                                    
+                                                @endif
+                                                
                                                 <a href="/lolabertarevamp/cart/{{$cart['id']}}/remove">
-                                                    <button class="btn btn-danger w-100 mt-3">Remove</button>
+                                                    <button class="btn btn-danger w-100 mt-3" onclick="return confirm('Remove this cart item?')">Remove</button>
                                                 </a>
                                                 
                                             </div>

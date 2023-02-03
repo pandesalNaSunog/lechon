@@ -9,6 +9,17 @@ use App\Models\Cart;
 use App\Models\Freebee;
 class CartController extends Controller
 {
+
+    public function addFreebie(Cart $cart, Request $request){
+        $fields = $request->validate([
+            'freebie' => 'required'
+        ]);
+        $cart->update([
+            'freebie_id' => $fields['freebie']
+        ]);
+
+        return back()->with('message','Success');
+    }
     public function deleteCart(Cart $cart){
         $userId = auth()->user()->id;
         if($cart->user_id == $userId){
@@ -46,7 +57,8 @@ class CartController extends Controller
                 'price' => $product->price,
                 'available' => $product->quantity,
                 'quantity' => $cart->quantity,
-                'has_freebie' => $product->has_freebie
+                'has_freebie' => $product->has_freebie,
+                'freebie_id' => $cart->freebie_id
             ];
         }
         return view('cart', [
@@ -62,6 +74,7 @@ class CartController extends Controller
             'user_id' => auth()->user()->id,
             'quantity' => 1
         ];
+        $fields['freebie_id'] = 0;
         if($product->quantity == 0){
             return back()->with('message', 'This product is out of stock');
         }

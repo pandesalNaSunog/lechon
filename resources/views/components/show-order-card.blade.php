@@ -14,14 +14,19 @@
                 @foreach($products as $orderItem)
 
                 <div class="card shadow mt-3">
-                    <div class="card-body d-flex">
-                        <img style="height: 100px; width: 100px; object-fit: cover" src="/lolabertarevamp/public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
-                        <div class="ms-2">
-                            <h3 class="fw-bold text-secondary">{{$orderItem['name']}}</h3>
-                            <i>Quantity: {{$orderItem['quantity']}}</i><br>
-                            <p class="text-danger">&#8369; {{$orderItem['price']}}</p>
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <img style="height: 100px; width: 100px; object-fit: cover" src="/lolabertarevamp/public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
+                            <div class="ms-2">
+                                <h3 class="fw-bold text-secondary">{{$orderItem['name']}}</h3>
+                                <i>Quantity: {{$orderItem['quantity']}}</i><br>
+                                <p class="text-danger">&#8369; {{$orderItem['price']}}</p>
+                            </div>
+                            <h6 class="align-self-center ms-auto text-danger fw-bold">&#8369; {{$orderItem['total']}}</h6>
                         </div>
-                        <h6 class="align-self-center ms-auto text-danger fw-bold">&#8369; {{$orderItem['total']}}</h6>
+                        @if($orderItem['freebie'] != 0)
+                        <p><strong>Added Freebie: </strong>{{$orderItem['freebie']}}</p>
+                        @endif
                     </div>
                 </div>
                                     
@@ -36,7 +41,7 @@
                 
             </div>
             <div class="card-footer">
-                <x-order-status :status="$status"></x-order-status>
+                <x-order-status :statuses="$statuses"></x-order-status>
                 
                 <form action="/lolabertarevamp/orders/{{$orderlist['id']}}/add-status" method="POST">
                     @csrf
