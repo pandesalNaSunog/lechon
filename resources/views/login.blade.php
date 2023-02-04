@@ -16,7 +16,7 @@
             <div class="row row-cols-1 row-cols-lg-2 d-flex align-items-lg-center align-items-end" style="height: 100%">
                 <div class="col col-lg-8">
                     
-                        <img src="/lolabertarevamp/public/storage/images/logo.png" alt="" class="img-fluid">
+                        <img src="/public/storage/images/logo.png" alt="" class="img-fluid">
                         <p class="text-light lead fs-2">Sign Up to shop with us!</p>
                     
                     
@@ -24,7 +24,7 @@
                 <div class="col col-lg-4 align-self-start align-self-lg-center">
                     <div class="card shadow bg-light">
                         <div class="card-body">
-                            <form action="/lolabertarevamp/login/authenticate" method="POST">
+                            <form action="/login/authenticate" method="POST">
                                 @csrf
                                 <input name="email" type="text" class="form-control" placeholder="Email">
                                 @error('email')
@@ -35,7 +35,7 @@
                                 <button class="my-btn py-3 w-100 mt-3">Log In</button>
                                 
                             </form>
-                            <a href="/lolabertarevamp/signup">
+                            <a href="/signup">
                                 <button class="my-btn-outline py-3 w-100 mt-3">Sign Up</button>
                             </a>
                             
