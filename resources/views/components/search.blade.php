@@ -1,5 +1,5 @@
 
-    <form action="/lolabertarevamp/products" method="GET">
+    <form action="/products" method="GET">
         <div class="input-group ms-3">
             
             <input required type="text" class="form-control" placeholder="Search" name="search">
