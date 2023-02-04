@@ -28,7 +28,7 @@ class UserController extends Controller
                 'active' => 'new password'
             ]);
         }else{
-            return redirec('/');
+            return redirect('/');
         }
     }
 

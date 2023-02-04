@@ -13,7 +13,7 @@
     <x-nav :active="$active"></x-nav>
     <div class="py-5">
         <div class="container">
-            <div class="card shadow bg-light">
+            <div class="card shadow bg-light col-lg-5">
                 <div class="card-body">
                     <form action="/profile/change-password/current" method="POST">
                         @csrf
