@@ -54,9 +54,10 @@ class ProductController extends Controller
     }
 
     public function destroy(Product $product){
-        $product->delete();
+        
         $carts = Carts::where('product_id', $product->id)->get();
         $carts->delete();
+        $product->delete();
         return redirect('/admin/inventory')->with('message', 'Successfully deleted product');
     }
 
