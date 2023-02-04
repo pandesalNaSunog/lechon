@@ -32,7 +32,7 @@
                                             </div>
                                             
                                             <div class="ms-auto">
-                                                <form action="/lolabertarevamp/cart/{{$cart['id']}}/update-quantity" method="POST">
+                                                <form action="/cart/{{$cart['id']}}/update-quantity" method="POST">
                                                     @csrf
                                                     @method('PUT')
                                                     <div class="input-group mt-3">
@@ -44,7 +44,7 @@
                                                     
                                                 </form>
                                                 @if($cart['has_freebie'] == 'yes')
-                                                <form action="/lolabertarevamp/cart/{{$cart['id']}}/add-freebie" method="POST">
+                                                <form action="/cart/{{$cart['id']}}/add-freebie" method="POST">
                                                     @csrf
                                                     <label for="freebie" class="fw-bold mt-3">Select a Freebie: </label>
                                                     <div class="input-group">
@@ -65,7 +65,7 @@
                                                     
                                                 @endif
                                                 
-                                                <a href="/lolabertarevamp/cart/{{$cart['id']}}/remove">
+                                                <a href="/cart/{{$cart['id']}}/remove">
                                                     <button class="btn btn-danger w-100 mt-3" onclick="return confirm('Remove this cart item?')">Remove</button>
                                                 </a>
                                                 
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="/lolabertarevamp/products">
+                            <a href="/products">
                                 <button class="btn btn-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
                                 <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
                                 </svg><span class="ms-2">Continue Shopping</span></button>
@@ -85,7 +85,7 @@
                         </div>
                         
                     </div>
-                    <form action="/lolabertarevamp/cart/checkout" method="POST">
+                    <form action="/cart/checkout" method="POST">
                         @csrf
                         <button class="btn btn-danger px-5 fw-bold mt-3">Checkout</button>
                     </a>
