@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="container">
-        <a href="../admin/add-product"><button class="btn btn-danger px-5 fw-bold">Add Product</button></a>
+        <a href="/admin/add-product"><button class="btn btn-danger px-5 fw-bold">Add Product</button></a>
     </div>
 
     <x-admin-freebees :freebies="$freebies"></x-admin-freebees>
