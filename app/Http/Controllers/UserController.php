@@ -7,6 +7,20 @@ use App\Models\User;
 use App\Models\Address;
 class UserController extends Controller
 {
+    public function updateProfile(Request $request){
+        $fields = $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users,email',
+            'contact' => 'required'
+        ]);
+
+        $userId = auth()->user()->id;
+
+        $user = User::where('id', $userId)->first();
+        $user->update($fields);
+
+        return redirect('/profile')->with('message', 'Profile updated successfully.');
+    }
     public function adminCheckUser(Request $request){
         if(isset(auth()->user()->id) && auth()->user()->user_type != "admin"){
             auth()->logout();

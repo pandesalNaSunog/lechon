@@ -39,6 +39,7 @@ Route::post('/orders/{order}/add-status', [OrderController::class, 'addOrderStat
 Route::get('/orders', [OrderController::class, 'myOrders'])->middleware('auth');
 Route::post('/profile/address',[AddressController::class, 'store'])->middleware('auth');
 Route::get('/profile/edit', [UserController::class, 'showEdit'])->middleware('auth');
+Route::put('/profile/edit',[UserController::class, 'updateProfile'])->middleware('auth');
 Route::post('/cart/checkout/confirm', [OrderController::class, 'confirmCheckout'])->middleware('auth');
 Route::get('/cart/{cart}/remove',[CartController::class, 'deleteCart'])->middleware('auth');
 Route::put('/cart/{cart}/update-quantity',[CartController::class, 'updateCartQuantity'])->middleware('auth');
