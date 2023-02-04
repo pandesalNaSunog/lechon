@@ -3,7 +3,7 @@
         <div class="py-5">
             <div class="row row-cols-1 row-cols-lg-3">
                 <div class="mt-5 mt-lg-0 col text-center text-lg-start">
-                    <img src="/lolabertarevamp/public/storage/images/logo.png" style="height: 130px; width: auto;" alt="" class="img-fluid">
+                    <img src="logo.png" style="height: 130px; width: auto;" alt="" class="img-fluid">
                     <p class="text-light mt-3 me-0 me-lg-5">𝑇ℎ𝑒 𝑝𝑖𝑔 𝑖𝑠 𝑐𝑜𝑜𝑘𝑒𝑑 𝑜𝑛𝑙𝑦 𝑎𝑠 𝑡ℎ𝑒 𝑜𝑟𝑑𝑒𝑟 𝑐𝑜𝑚𝑒𝑠 𝑖𝑛. 𝑇ℎ𝑒 𝑝𝑖𝑔 𝑖𝑠 𝑠𝑡𝑢𝑓𝑓𝑒𝑑 𝑎𝑛𝑑 𝑟𝑜𝑎𝑠𝑡𝑒𝑑 𝑡ℎ𝑒 𝑜𝑙𝑑-𝑓𝑎𝑠ℎ𝑖𝑜𝑛𝑒𝑑 𝑤𝑎𝑦 𝑜𝑣𝑒𝑟 𝑎 𝑝𝑖𝑡 𝑜𝑓 𝑠𝑚𝑜𝑙𝑑𝑒𝑟𝑖𝑛𝑔 𝑐ℎ𝑎𝑟𝑐𝑜𝑎𝑙 𝑖𝑛 𝑡ℎ𝑒 𝑓𝑎𝑚𝑖𝑙𝑦'𝑠 𝑜𝑤𝑛 𝑏𝑎𝑐𝑘𝑦𝑎𝑟𝑑, 𝑡𝑜 𝑎𝑠𝑠𝑢𝑟𝑒 𝑡ℎ𝑒 𝑙𝑒𝑐ℎ𝑜𝑛'𝑠 𝑐𝑜𝑛𝑠𝑖𝑠𝑡𝑒𝑛𝑐𝑦 𝑎𝑛𝑑 𝑞𝑢𝑎𝑙𝑖𝑡𝑦.</p>
                 </div>
                 
