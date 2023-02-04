@@ -14,6 +14,8 @@ class UserController extends Controller
             'password' => 'required|confirmed'
         ]);
 
+        dd($fields['password']);
+
         $userId = auth()->user()->id;
         $user = User::where('id', $userId)->first();
 
