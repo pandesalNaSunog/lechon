@@ -18,7 +18,7 @@
                     <td>{{$orderItem['delivery_address']}}</td>
                     <td>{{$orderItem['date']}}</td>
                     <td>
-                        <a href="/lolabertarevamp/admin/orders/{{$orderItem['id']}}">
+                        <a href="/admin/orders/{{$orderItem['id']}}">
                             <button class="btn btn-outline-danger">View Details</button>
                         </a>
                     </td>
