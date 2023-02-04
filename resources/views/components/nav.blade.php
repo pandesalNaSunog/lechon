@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-xxl bg-orange navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-brand d-flex align-items-center">
-            <a href="/"><img src="/logo.png" style="height: 70px; width: auto; object-fit: cover" alt=""></a>
+            <a href="/"><img src="/logo.png" style="height: 30px; width: auto; object-fit: cover" alt=""></a>
         </div>
         <x-search/>
         <button class="navbar-toggler" data-bs-target="#navmenu" data-bs-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
