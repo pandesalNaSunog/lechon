@@ -25,7 +25,9 @@
                         @enderror
                         <label class="fw-bold mt-3">Confirm Password: </label>
                         <input type="password" name="password_confirmation" class="form-control">
-                       
+                        @error('password_confirmation')
+                        <x-error-text>{{$message}}</x-error-text>
+                        @enderror
                         <button class="btn btn-danger mt-3 w-100">Confirm</button>
                     </form>
                     
