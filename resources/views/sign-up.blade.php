@@ -15,13 +15,13 @@
         <div class="container" style="height: 100%">
             <div class="row row-cols-1 row-cols-lg-2 d-flex align-items-center" style="height: 100%">
                 <div class="col col-lg-8">
-                    <img src="/lolabertarevamp/public/storage/images/logo.png" alt="" class="img-fluid">
+                    <img src="/logo.png" alt="" class="img-fluid">
                     <p class="text-light lead fs-2">Sign Up to shop with us!</p>
                 </div>
                 <div class="col col-lg-4">
                     <div class="card shadow bg-light">
                         <div class="card-body">
-                            <form action="/lolabertarevamp/signup/register" method="POST">
+                            <form action="/signup/register" method="POST">
                                 @csrf
                                 <label class="fw-bold">Name</label>
                                 <input value="{{old('name')}}" name="name" type="text" class="form-control">
@@ -53,7 +53,7 @@
                                 <button class="my-btn py-3 w-100 mt-3">Sign Up</button>
                                 
                             </form>
-                            <a href="/lolabertarevamp/login">
+                            <a href="/login">
                                 <button class="my-btn-outline py-3 w-100 mt-3">Log In</button>
                             </a>
                             
