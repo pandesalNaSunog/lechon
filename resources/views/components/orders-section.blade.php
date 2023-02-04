@@ -18,7 +18,7 @@
                         <div class="card shadow mt-3">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <img src="/lolabertarevamp/public/storage/{{$product['image']}}" style="height: 100px; width: 100px; object-fit: cover"alt="" class="img-fluid">
+                                    <img src="/public/storage/{{$product['image']}}" style="height: 100px; width: 100px; object-fit: cover"alt="" class="img-fluid">
                                     <div class="ms-3">
                                         <h5 class="fw-bold text-muted">{{$product['name']}}</h5>
                                         <i>Quantity: {{$product['quantity']}}</i>
