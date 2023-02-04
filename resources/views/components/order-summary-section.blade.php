@@ -13,7 +13,7 @@
                 <div class="card shadow mt-3">
                     <div class="card-body">
                         <div class="d-flex">
-                            <img style="height: 100px; width: 100px; object-fit: cover" src="../public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
+                            <img style="height: 100px; width: 100px; object-fit: cover" src="/public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
                             <div class="ms-2">
                                 <h3 class="fw-bold text-secondary">{{$orderItem['name']}}</h3>
                                 <i>Quantity: {{$orderItem['quantity']}}</i><br>
@@ -36,7 +36,7 @@
                     <h4 class="fw-bold">Total</h4>
                     <h4 class="fw-bold">&#8369; {{$total}}</h4>
                 </div>
-                <form method="POST" action="/lolabertarevamp/cart/checkout/confirm">
+                <form method="POST" action="/cart/checkout/confirm">
                     @csrf
                     <label class="fw-bold mt-4">Select Delivery Address</label>
                     <select name="delivery_address" id="" class="form-select">
