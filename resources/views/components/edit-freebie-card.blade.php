@@ -3,7 +3,7 @@
         <div class="card shadow bg-light col-lg-6 mx-auto">
             <div class="card-body">
                 <h5 class="fw-bold text-center">Edit Freebee</h5>
-                <form action="/lolabertarevamp/admin/inventory/freebie/{{$freebie->id}}" method="POST">
+                <form action="/admin/inventory/freebie/{{$freebie->id}}" method="POST">
                     @csrf
                     @method('PUT')
                     <label class="fw-bold">Name:</label>
