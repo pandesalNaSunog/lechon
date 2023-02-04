@@ -31,7 +31,7 @@
                     <form action="/admin/inventory/{{$product->id}}" method="POST">
                         @method('DELETE')
                         @csrf
-                        <button name="delete" class="btn btn-outline-danger">Delete</button>
+                        <button onclick="return confirm('Delete this product?')" name="delete" class="btn btn-outline-danger">Delete</button>
                     </form>
                     
                 </td>
