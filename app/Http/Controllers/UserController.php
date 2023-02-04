@@ -5,8 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Address;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
+    public function currentPassword(Request $request){
+        $fields = $request->validate([
+            'password' => 'required'
+        ]);
+        $userId = auth()->user()->id;
+        $user = User::where('id', $userId)->first();
+        
+        dd(Hash::check($fiels['password'], $user->password));
+    }
 
     public function changePasswordView(){
         return view('change-password',[
