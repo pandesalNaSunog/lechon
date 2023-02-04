@@ -15,6 +15,12 @@
         background-color: darkred;
         border-radius: 50%;
     }
+
+    #search-input{
+        width: 75%;
+    }
+
+
     #header::before{
         content: '';
         top: 0;
@@ -79,6 +85,10 @@
     @media (min-width: 992px){
         .sub-header-text{
             font-size: 80px;
+        }
+
+        #search-input{
+            width: 100%;
         }
     }
     .sub-header-text{
