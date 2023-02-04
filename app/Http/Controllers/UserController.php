@@ -7,6 +7,18 @@ use App\Models\User;
 use App\Models\Address;
 class UserController extends Controller
 {
+    public function adminCheckUser(Request $request){
+        if(isset(auth()->user()->id) && auth()->user()->user_type != "admin"){
+            auth()->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return view('admin.login');
+        }else if(isset(auth()->user()->id) && auth()->user()->user_type == "admin"){
+            return view('admin.users');
+        }else{
+            return view('admin.login');
+        }
+    }
     public function showEdit(){
         $id = auth()->user()->id;
         $user = User::where('id', $id)->first();

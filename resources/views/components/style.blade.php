@@ -20,7 +20,7 @@
         top: 0;
         left: 0;
         position: absolute;
-        background-image: url('public/storage/images/header.jpg');
+        background-image: url('header.jpg');
         background-size: cover;
         bottom:0;
         right: 0;
@@ -46,7 +46,7 @@
         top: 0;
         left: 0;
         position: absolute;
-        background-image: url('public/storage/images/header.jpg');
+        background-image: url('header.jpg');
         background-size: cover;
         bottom:0;
         right: 0;

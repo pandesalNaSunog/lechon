@@ -20,9 +20,7 @@ Route::get('/products', [ProductController::class, 'index']);
 //Admin Page
 Route::get('/admin/users',[UserController::class, 'index'])->middleware('auth');
 
-Route::get('/admin', function(){
-    return view('admin.login');
-})->middleware('guest');
+Route::get('/admin', [UserController::class, 'adminCheckUser']);
 
 Route::get('/pricelist', function(){
     return view('pricelist',[
