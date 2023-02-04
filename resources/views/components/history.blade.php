@@ -13,7 +13,7 @@
             
 
             <div class="col">
-                <img class="shadow rounded-3 img-fluid" src="/lolabertarevamp/lola.jpg" alt="">
+                <img class="shadow rounded-3 img-fluid" src="/lola.jpg" alt="">
             </div>
             
         </div>
