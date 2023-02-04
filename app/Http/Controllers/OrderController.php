@@ -168,7 +168,8 @@ class OrderController extends Controller
             if($order->delivery_address == "Pickup"){
                 $deliveryAddress = "Pickup";
             }else{
-                $deliveryAddress = $order->delivery_address;
+                $addressData = Address::where('id', $order->delivery_address)->first();
+                $deliveryAddress = $addressData->address;
             }
             foreach($productIds as $key => $productId){
                 $freebie = Freebee::where('id', $freebieIds[$key])->first();
