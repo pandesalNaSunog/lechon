@@ -15,7 +15,21 @@ class UserController extends Controller
         $userId = auth()->user()->id;
         $user = User::where('id', $userId)->first();
         
-        dd(Hash::check($fields['password'], $user->password));
+        if(Hash::check($fields['password'], $user->password)){
+            return redirect('/profile/change-password/new')->with('correct-password','okay');
+        }else{
+            return back()->withErrors(['password' => 'Invalid Password'])->onlyInput('password');
+        }
+    }
+
+    public function newPassword(){
+        if(session()->has('correct-password')){
+            return view('new-password',[
+                'active' => 'new password'
+            ]);
+        }else{
+            return redirec('/');
+        }
     }
 
     public function changePasswordView(){
