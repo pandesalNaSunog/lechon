@@ -6,8 +6,7 @@
             <form action="/profile/edit" method="POST">
                 @csrf
                 @method('PUT')
-                <x-error-text>{{$message}}</x-error-text>
-                @enderror
+                
                 <label class="fw-bold">Name:</label>
                 <input value="{{$user->name}}" type="text" name="name" class="form-control">
                 @error('name')
