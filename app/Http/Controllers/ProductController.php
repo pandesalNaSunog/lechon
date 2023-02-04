@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Freebee;
+use App\Models\Carts;
 class ProductController extends Controller
 {
     public function updateHasFreebie(Request $request){
