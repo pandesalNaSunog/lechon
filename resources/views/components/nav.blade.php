@@ -55,10 +55,10 @@
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="fw-bold nav-link" href="//login">Sign In</a>
+                    <a class="fw-bold nav-link" href="/login">Sign In</a>
                 </li>
                 <li class="nav-item">
-                    <a class="fw-bold nav-link" href="//signup">Sign Up</a>
+                    <a class="fw-bold nav-link" href="/signup">Sign Up</a>
                 </li>
                 @endauth
             </ul>
