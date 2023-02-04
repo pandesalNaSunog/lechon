@@ -2,7 +2,7 @@
     <div class="d-flex align-items-center" style="height: 100%; width: 100%">
         <div class="container">
             <div class="text-center w-100">
-                <img class="img-fluid" src="public/storage/images/logo.png" alt="">
+                <img class="img-fluid" src="logo.png" alt="">
             </div>
             <div class="text-center">
                 <a href="products">
