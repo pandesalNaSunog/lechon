@@ -11,6 +11,7 @@
                 <div class="card shadow">
                     <div class="card-body">
                         <strong style="font-size: 15px">{{$order['date']}}</strong>
+                        <p><strong>Delivery Address: </strong>{{$order['delivery_address']}}</p>
                         @php
                         $products = $order['products'];
                         @endphp

@@ -164,6 +164,12 @@ class OrderController extends Controller
             $freebieIds = explode('*', $order->freebie_ids);
             $statuses = OrderStatus::where('order_id', $order->id)->get();
             $productList = array();
+
+            if($order->delivery_address == "Pickup"){
+                $deliveryAddress = "Pickup";
+            }else{
+                $deliveryAddress = $order->delivery_address;
+            }
             foreach($productIds as $key => $productId){
                 $freebie = Freebee::where('id', $freebieIds[$key])->first();
 
@@ -187,7 +193,8 @@ class OrderController extends Controller
             $orderList[] = [
                 'products' => $productList,
                 'date' => $order->created_at->format('M d, Y h:i A'),
-                'statuses' => $statuses
+                'statuses' => $statuses,
+                'delivery_address' => $deliveryAddress
             ];
 
         }
