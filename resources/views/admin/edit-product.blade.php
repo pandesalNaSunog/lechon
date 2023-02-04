@@ -18,7 +18,7 @@
                 <h3 class="fw-bold text-center">
                     Edit Product
                 </h3>
-                <form action="/lolabertarevamp/admin/inventory/{{$product->id}}" enctype="multipart/form-data" method="POST">
+                <form action="/admin/inventory/{{$product->id}}" enctype="multipart/form-data" method="POST">
                     @csrf
                     @method('PUT')
                     <label class="fw-bold">Name:</label>
@@ -56,7 +56,7 @@
                     <x-error-text>{{$message}}</x-error-text>
                     @enderror
 
-                    <img class="img-fluid mt-3" style="height: 400px; width: 100%; object-fit: cover" src="/lolabertarevamp/public/storage/{{$product->image}}" alt="">
+                    <img class="img-fluid mt-3" style="height: 400px; width: 100%; object-fit: cover" src="/public/storage/{{$product->image}}" alt="">
                     <button class="btn btn-danger mt-3 fw-bold w-100">Confirm</button>
                 </form>
                 
