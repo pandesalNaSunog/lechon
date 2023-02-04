@@ -11,7 +11,10 @@
 <body class="bg-orange">
     <div class="container">
         <div class="mt-5 text-center">
-            <img src="/logo.png" style="height: 200px; width: auto" alt="" class="img-fluid">
+            <div class="col-lg-5 mx-auto">
+                <img src="/logo.png" style="height: auto; width: 100%" alt="" class="col-lg-5 img-fluid">
+            </div>
+            
             <div class="card shadow mx-auto mt-4 col-lg-5">
                 <div class="card-body">
                     <h5 class="fw-bold">ADMINISTRATOR</h5>
