@@ -17,7 +17,7 @@
     <x-section-cards :active="$active">
     
 
-    <form action="/lolabertarevamp/admin/sales" method="GET">
+    <form action="/admin/sales" method="GET">
         <div class="input-group">
             <input type="text" name="year" class="form-control" placeholder="Year">
             <button class="btn btn-outline-danger">Search</button>
