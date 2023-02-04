@@ -27,6 +27,8 @@ Route::get('/pricelist', function(){
         'active' => 'pricelist'
     ]);
 });
+
+Route::post('/profile/change-password/new/update', [UserController::class, 'updatePassword'])->middleware('auth');
 Route::get('/profile/change-password/new',[UserController::class, 'newPassword'])->middleware('auth');
 Route::post('/profile/change-password/current', [UserController::class, 'currentPassword'])->middleware('auth');
 Route::get('/profile/change-password', [UserController::class, 'changePasswordView'])->middleware('auth');

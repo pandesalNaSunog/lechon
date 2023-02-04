@@ -8,6 +8,18 @@ use App\Models\Address;
 use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
+
+    public function updatePassword(Request $request){
+        $fields = $request->validate([
+            'password' => 'required|confirmed'
+        ]);
+
+        $userId = auth()->user()->id;
+        $user = User::where('id', $userId)->first();
+
+        $user->update($fields);
+        return redirect('/profile')->with('message', 'Password has been update successfully');
+    }
     public function currentPassword(Request $request){
         $fields = $request->validate([
             'password' => 'required'

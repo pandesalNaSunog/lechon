@@ -11,5 +11,27 @@
 </head>
 <body>
     <x-nav :active="$active"></x-nav>
+
+    <div class="py-5">
+        <div class="container">
+            <div class="card shadow col-lg-5 mx-auto">
+                <div class="card-body">
+                    <form action="/profile/change-password/new/update" method="POST">
+                        @csrf
+                        <label class="fw-bold">New Password: </label>
+                        <input type="password" name="password" class="form-control">
+                        @error('password')
+                        <x-error-text>{{$message}}</x-error-text>
+                        @enderror
+                        <label class="fw-bold mt-3">Confirm Password: </label>
+                        <input type="password" name="password_confirmation" class="form-control">
+                       
+                        <button class="btn btn-danger mt-3 w-100">Confirm</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
