@@ -8,7 +8,7 @@
         @if(count($products) == 0)
             <div class="py-5">
             
-                <h3 class="fw-bold text-muted text-center">Empty</h3>
+                <h3 class="fw-bold text-muted text-center">No results for keyword: "<?php echo $_GET['search']; ?>"</h3>
             </div>
         @endif
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3" style="margin-top: -80px;">
