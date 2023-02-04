@@ -7,7 +7,7 @@
     <x-bootstrap-links/>
     <x-style/>
     <x-jquery/>
-    <title>Login</title>
+    <title>Sign Up</title>
 </head>
 <body class="bg-dark">
 <x-toast/>
