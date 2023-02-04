@@ -10,7 +10,7 @@ class UserController extends Controller
     public function updateProfile(Request $request){
         $fields = $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:users,email',
+            'email' => 'required',
             'contact' => 'required'
         ]);
 

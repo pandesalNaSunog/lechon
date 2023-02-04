@@ -6,12 +6,23 @@
             <form action="/profile/edit" method="POST">
                 @csrf
                 @method('PUT')
+                <x-error-text>{{$message}}</x-error-text>
+                @enderror
                 <label class="fw-bold">Name:</label>
                 <input value="{{$user->name}}" type="text" name="name" class="form-control">
+                @error('name')
+                <x-error-text>{{$message}}</x-error-text>
+                @enderror
                 <label class="fw-bold">Email:</label>
                 <input value="{{$user->email}}" type="text" name="email" class="form-control">
+                @error('email')
+                <x-error-text>{{$message}}</x-error-text>
+                @enderror
                 <label class="fw-bold">Contact:</label>
                 <input value="{{$user->contact}}" type="text" name="contact" class="form-control">
+                @error('contact')
+                <x-error-text>{{$message}}</x-error-text>
+                @enderror
                 <button class="btn btn-danger mt-3 w-100">Confirm</button>
             </form>
             
