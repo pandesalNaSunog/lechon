@@ -14,15 +14,18 @@
     <div class="py-5">
         <div class="container">
             <div class="card shadow bg-light">
-                <form action="/profile/change-password/current" method="POST">
-                    @csrf
-                    <label class="fw-bold">Current Password:</label>
-                    <input type="password" name="password" class="form-control">
-                    @error('password')
-                    <x-error-text>{{$message}}</x-error-text>
-                    @enderror
-                    <button class="btn btn-danger mt-3 w-100">Confirm</button>
-                </form>
+                <div class="card-body">
+                    <form action="/profile/change-password/current" method="POST">
+                        @csrf
+                        <label class="fw-bold">Current Password:</label>
+                        <input type="password" name="password" class="form-control">
+                        @error('password')
+                        <x-error-text>{{$message}}</x-error-text>
+                        @enderror
+                        <button class="btn btn-danger mt-3 w-100">Confirm</button>
+                    </form>
+                </div>
+                
                 
             </div>
         </div>

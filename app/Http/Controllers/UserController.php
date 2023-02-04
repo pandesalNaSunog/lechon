@@ -15,7 +15,7 @@ class UserController extends Controller
         $userId = auth()->user()->id;
         $user = User::where('id', $userId)->first();
         
-        dd(Hash::check($fiels['password'], $user->password));
+        dd(Hash::check($fields['password'], $user->password));
     }
 
     public function changePasswordView(){
