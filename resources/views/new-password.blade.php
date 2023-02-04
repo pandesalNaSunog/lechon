@@ -16,7 +16,7 @@
         <div class="container">
             <div class="card shadow col-lg-5 mx-auto">
                 <div class="card-body">
-                    <form action="/profile/change-password/new/update" method="POST">
+                    <form action="/profile/change-password/update" method="POST">
                         @csrf
                         <label class="fw-bold">New Password: </label>
                         <input type="password" name="password" class="form-control">
