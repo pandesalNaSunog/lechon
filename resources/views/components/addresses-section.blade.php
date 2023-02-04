@@ -20,7 +20,7 @@
         <div class="card-footer">
             <h4 class="fw-bold">Add Address</h4>
             <hr>
-            <form action="/lolabertarevamp/profile/address" method="POST">
+            <form action="/profile/address" method="POST">
                 @csrf
                 <label class="fw-bold">Address:</label>
                 <input name="address" type="text" class="form-control">
