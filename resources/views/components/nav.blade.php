@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-xxl bg-orange navbar-dark sticky-top">
     <div class="container">
         <div class="navbar-brand d-flex align-items-center" id="search-input">
-            <a href="/"><img src="/logo.png" style="height: 30px; width: 30px; object-fit: cover" alt=""></a>
+            <a href="/"><img src="/logo.png" style="height: 30px; width: auto; object-fit: cover" alt=""></a>
             <x-search/>
         </div>
         
