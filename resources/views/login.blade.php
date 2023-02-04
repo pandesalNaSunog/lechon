@@ -16,7 +16,7 @@
             <div class="row row-cols-1 row-cols-lg-2 d-flex align-items-lg-center align-items-end" style="height: 100%">
                 <div class="col col-lg-8">
                     
-                        <img src="/public/storage/images/logo.png" alt="" class="img-fluid">
+                        <img src="/logo.png" alt="" class="img-fluid">
                         <p class="text-light lead fs-2">Sign Up to shop with us!</p>
                     
                     
