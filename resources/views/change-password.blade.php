@@ -15,6 +15,7 @@
         <div class="container">
             <div class="card shadow bg-light">
                 <form action="/profile/change-password/current" method="POST">
+                    @csrf
                     <label class="fw-bold">Current Password:</label>
                     <input type="password" name="password" class="form-control">
                     @error('password')
