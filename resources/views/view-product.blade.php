@@ -21,6 +21,10 @@
                 <div class="col">
                     <h1 class="fw-bold">{{$product->name}}</h1>
                     <i>Quanity: {{$product->quantity}}</i>
+
+                    @if($product->quantity == 0)
+                    <h3 class="text-danger">(Sold Out)</h3>
+                    @endif
                     <h3 class="fw-bold text-secondary">&#8369; {{$product->price}}</h3>
                     <hr>
                     <p class="lead">{{$product->description}}</p>
