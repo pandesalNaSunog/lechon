@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Freebee;
-use App\Models\Carts;
+use App\Models\Cart;
 class ProductController extends Controller
 {
     public function updateHasFreebie(Request $request){
@@ -55,7 +55,7 @@ class ProductController extends Controller
 
     public function destroy(Product $product){
         
-        $carts = Carts::where('product_id', $product->id)->get();
+        $carts = Cart::where('product_id', $product->id)->get();
         $carts->delete();
         $product->delete();
         return redirect('/admin/inventory')->with('message', 'Successfully deleted product');
