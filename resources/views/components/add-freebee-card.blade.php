@@ -3,7 +3,7 @@
         <div class="card shadow bg-light col-lg-6 mx-auto">
             <div class="card-body">
                 <h5 class="fw-bold text-center">Add Freebee</h5>
-                <form action="/lolabertarevamp/admin/inventory/add-freebee/add" method="POST">
+                <form action="/admin/inventory/add-freebee/add" method="POST">
                     @csrf
                     <label class="fw-bold">Name:</label>
                     <input type="text" class="form-control" name="name">
