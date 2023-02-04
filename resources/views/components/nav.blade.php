@@ -3,8 +3,9 @@
     <div class="container">
         <div class="navbar-brand d-flex align-items-center">
             <a href="/"><img src="/logo.png" style="height: 30px; width: auto; object-fit: cover" alt=""></a>
+            <x-search/>
         </div>
-        <x-search/>
+        
         <button class="navbar-toggler" data-bs-target="#navmenu" data-bs-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
         <div id="navmenu" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
