@@ -17,7 +17,7 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->description}}</td>
                 <td>
-                    <img style="height: 70px; width: 70px; border-radius: 10px; object-fit: cover" src="../public/storage/{{$product->image}}" alt="">
+                    <img style="height: 70px; width: 70px; border-radius: 10px; object-fit: cover" src="/public/storage/{{$product->image}}" alt="">
                 </td>
                 <td>&#8369; {{$product->price}}</td>
                 <td>{{$product->quantity}}</td>
