@@ -11,11 +11,11 @@
 <body class="bg-orange">
     <div class="container">
         <div class="mt-5 text-center">
-            <img src="/lolabertarevamp/public/storage/images/logo.png" style="height: 200px; width: auto" alt="" class="img-fluid">
+            <img src="/logo.png" style="height: 200px; width: auto" alt="" class="img-fluid">
             <div class="card shadow mx-auto mt-4 col-lg-5">
                 <div class="card-body">
                     <h5 class="fw-bold">ADMINISTRATOR</h5>
-                    <form action="admin/login" method="POST">
+                    <form action="/admin/login" method="POST">
                         @csrf
                         <input name="email" type="text" class="form-control" placeholder="Email">
                         @error('email')
