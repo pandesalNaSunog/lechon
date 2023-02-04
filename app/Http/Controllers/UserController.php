@@ -14,8 +14,10 @@ class UserController extends Controller
             $request->session()->regenerateToken();
             return view('admin.login');
         }else if(isset(auth()->user()->id) && auth()->user()->user_type == "admin"){
+            $users = User::where('user_type', '<>', 'admin')->paginate(5);
             return view('admin.users',[
-                'active' => 'users'
+                'active' => 'users',
+                'users' => $users
             ]);
         }else{
             return view('admin.login');
