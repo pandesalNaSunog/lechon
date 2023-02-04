@@ -88,7 +88,7 @@
         }
 
         #search-input{
-            width: 100%;
+            width: 25%;
         }
     }
     .sub-header-text{
