@@ -14,11 +14,13 @@ class UserController extends Controller
             'password' => 'required|confirmed'
         ]);
 
+        dd($fields['password']);
+
         $userId = auth()->user()->id;
         $user = User::where('id', $userId)->first();
 
         $user->update($fields);
-        return redirect('/profile')->with('message', 'Password has been update successfully');
+        return redirect('/profile')->with('message', 'Password has been updated successfully');
     }
     public function currentPassword(Request $request){
         $fields = $request->validate([
