@@ -14,7 +14,9 @@ class UserController extends Controller
             $request->session()->regenerateToken();
             return view('admin.login');
         }else if(isset(auth()->user()->id) && auth()->user()->user_type == "admin"){
-            return view('admin.users');
+            return view('admin.users',[
+                'active' => 'users'
+            ]);
         }else{
             return view('admin.login');
         }
