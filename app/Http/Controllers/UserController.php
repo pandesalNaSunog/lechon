@@ -11,12 +11,14 @@ class UserController extends Controller
 
     public function updatePassword(Request $request){
 
-        dd($request->all());
         $fields = $request->validate([
-            'password' => 'required|min:6|confirmed'
+            'password' => 'required',
+            'password_confirmation' => 'required'
         ]);
 
-        dd($fields['password']);
+        if($fields['password'] != $fields['password_confirmation']){
+            return back()->withErrors(['password' => 'Password does not match'])->onlyInput('password');
+        }
 
         $userId = auth()->user()->id;
         $user = User::where('id', $userId)->first();
