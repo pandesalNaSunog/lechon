@@ -16,7 +16,7 @@
                 <div class="card shadow mt-3">
                     <div class="card-body">
                         <div class="d-flex">
-                            <img style="height: 100px; width: 100px; object-fit: cover" src="/lolabertarevamp/public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
+                            <img style="height: 100px; width: 100px; object-fit: cover" src="/public/storage/{{$orderItem['image']}}" alt="" class="img-fluid">
                             <div class="ms-2">
                                 <h3 class="fw-bold text-secondary">{{$orderItem['name']}}</h3>
                                 <i>Quantity: {{$orderItem['quantity']}}</i><br>
@@ -43,7 +43,7 @@
             <div class="card-footer">
                 <x-order-status :statuses="$statuses"></x-order-status>
                 
-                <form action="/lolabertarevamp/orders/{{$orderlist['id']}}/add-status" method="POST">
+                <form action="/orders/{{$orderlist['id']}}/add-status" method="POST">
                     @csrf
                     <label class="fw-bold">Add Order Status:</label>
                     <input type="text" class="form-control" name="status">
