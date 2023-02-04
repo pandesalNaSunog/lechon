@@ -11,6 +11,8 @@
                 $products = $orderlist['products'];
                 $statuses = $orderlist['statuses'];
                 @endphp
+
+                <strong>Delivery Address: {{$orderlist['delivery_address']}}</strong>
                 @foreach($products as $orderItem)
 
                 <div class="card shadow mt-3">

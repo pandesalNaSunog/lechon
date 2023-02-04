@@ -102,12 +102,20 @@ class OrderController extends Controller
             $grandTotal += $total;
         }
 
+        if($order->delivery_address == "Pickup"){
+            $deliveryAddress = "Pickup";
+        }else{
+            $addressData = Address::where('id', $order->delivery_address)->first();
+            $deliveryAddress = $addressData->address;
+        }
+
 
         $orderList = [
             'products' => $productList,
             'date' => $order->created_at->format('M d, Y h:i A'),
             'id' => $order->id,
-            'statuses' => $statuses
+            'statuses' => $statuses,
+            'delivery_address' => $deliveryAddress
         ];
         return view('admin.show-order',[
             'orderlist' => $orderList,
