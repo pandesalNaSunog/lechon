@@ -28,10 +28,7 @@ Route::get('/pricelist', function(){
     ]);
 });
 
-Route::post('/profile/change-password/update', [UserController::class, 'updatePassword'])->middleware('auth');
-Route::get('/profile/change-password/new',[UserController::class, 'newPassword'])->middleware('auth');
-Route::post('/profile/change-password/current', [UserController::class, 'currentPassword'])->middleware('auth');
-Route::get('/profile/change-password', [UserController::class, 'changePasswordView'])->middleware('auth');
+
 Route::get('/admin/sales', [OrderController::class, 'showSales'])->middleware('auth');
 Route::put('/admin/inventory/freebie/{freebie}', [FreebeeController::class, 'update'])->middleware('auth');
 Route::get('/admin/inventory/freebie/{freebie}', [FreebeeController::class, 'show'])->middleware('auth');
