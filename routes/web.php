@@ -27,6 +27,8 @@ Route::get('/pricelist', function(){
         'active' => 'pricelist'
     ]);
 });
+
+Route::get('/profile/change-password', [UserController::class, 'changePasswordView'])->middleware('auth');
 Route::get('/admin/sales', [OrderController::class, 'showSales'])->middleware('auth');
 Route::put('/admin/inventory/freebie/{freebie}', [FreebeeController::class, 'update'])->middleware('auth');
 Route::get('/admin/inventory/freebie/{freebie}', [FreebeeController::class, 'show'])->middleware('auth');

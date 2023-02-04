@@ -7,6 +7,12 @@ use App\Models\User;
 use App\Models\Address;
 class UserController extends Controller
 {
+
+    public function changePasswordView(){
+        return view('change-password',[
+            'active' => 'profile'
+        ]);
+    }
     public function updateProfile(Request $request){
         $fields = $request->validate([
             'name' => 'required',
