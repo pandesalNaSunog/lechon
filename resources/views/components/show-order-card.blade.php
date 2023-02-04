@@ -12,7 +12,7 @@
                 $statuses = $orderlist['statuses'];
                 @endphp
 
-                <strong>Delivery Address: {{$orderlist['delivery_address']}}</strong>
+                <p><strong>Delivery Address:</strong> {{$orderlist['delivery_address']}}</p>
                 @foreach($products as $orderItem)
 
                 <div class="card shadow mt-3">
