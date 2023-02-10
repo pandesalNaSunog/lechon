@@ -46,7 +46,7 @@
                         @endforeach
                     </select>
                     <button class="btn btn-danger w-100 mt-3">Confirm Checkout</button>
-                    <p class="text-center" style="font-size: 10px">By confirming checkout, you agree to our <a href="/policy">Terms and Payment Policies</a></p>
+                    <p class="text-center mt-3" style="font-size: 13px">By confirming checkout, you agree to our <a href="/policy">Terms and Payment Policies</a></p>
                 </form>
                 
             </div>
