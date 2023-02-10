@@ -209,8 +209,6 @@ class OrderController extends Controller
     }
 
     public function deleteProofOfPurchase(Order $order){
-
-        unlink('/public/storage/' . $order->proof_of_purchase);
         $order->update([
             'proof_of_purchase' => null
         ]);
