@@ -1,4 +1,5 @@
 @props(['statuses'])
+<p class="fw-bold">Status: </p>
 <ul>
     @foreach($statuses as $status)
         <li>
