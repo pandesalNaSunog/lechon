@@ -4,7 +4,7 @@
 </p>
 
 @if($proof != null)
-<img src="/public/storage{{$order['proof_of_purchase']}}" class="img-fluid" alt="" style="height: auto; width: 100%">
+<img src="/public/storage/{{$order['proof_of_purchase']}}" class="img-fluid" alt="" style="height: auto; width: 100%">
 @else
 <h6 class="fw-bold py-4 text-center">No Proof of Purchase</h6>
 @endif
