@@ -10,5 +10,5 @@
 @endif
 
 
-<input type="file" name="proof-of-purchase" style="display: none">
+<input type="file" name="proof-of-purchase" id="proof" style="display: none">
 <label for="proof" class="btn btn-danger mt-3 w-100">Add Proof of Purchase</label>
