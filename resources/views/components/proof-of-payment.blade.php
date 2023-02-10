@@ -10,7 +10,7 @@
 @endif
 
 <form action="/orders/{{$order['id']}}/add-proof-of-purchase" method="POST">
-    <input type="file" name="proof_of_purchase">
+    <input type="file" name="proof_of_purchase" class="form-control">
     @error('proof_of_purchase')
     <x-error-text>{{$message}}</x-error-text>
     @enderror
