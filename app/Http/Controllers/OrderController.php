@@ -207,6 +207,11 @@ class OrderController extends Controller
             'orders' => $orders
         ]);
     }
+
+    public function deleteProofOfPurchase(Order $order){
+        $order->delete();
+        return back()->with('message', 'Proof of purchase has been deleted');
+    }
     public function addProofOfPurchase(Order $order, Request $request){
         if($request->hasFile('proof_of_purchase')){
             $fields['proof_of_purchase'] = $request->file('proof_of_purchase')->store('images','public');
