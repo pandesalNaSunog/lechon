@@ -15,7 +15,7 @@
     <div class="bg-light py-4">
         <div class="container">
         
-            <div class="mx-auto card shadow col-lg-6">
+            <div class="mx-auto card shadow col-lg-8">
                 <img src="policy.png" style="height: auto; width: 100%" alt="" class="card-img-top">
             </div>
         </div>
