@@ -69,7 +69,7 @@
         background-size: cover;
         bottom:0;
         right: 0;
-        background-position: center;
+        background-position: bottom;
         opacity: 30%;
         z-index: -1;
     }
