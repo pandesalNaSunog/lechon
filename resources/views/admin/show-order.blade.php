@@ -12,6 +12,6 @@
 <body>
     <x-toast/>
     <x-admin-nav :active="$active"/>
-    <x-show-order-card :orderlist="$orderlist" :total="$total"/>
+    <x-show-order-card :proof="$proof" :orderlist="$orderlist" :total="$total"/>
 </body>
 </html>

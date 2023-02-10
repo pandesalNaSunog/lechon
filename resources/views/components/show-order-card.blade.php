@@ -1,4 +1,4 @@
-@props(['orderlist','total'])
+@props(['orderlist','total','proof'])
 <div class="bg-light py-5">
     <div class="container">
         <div class="card shadow col-lg-6 mx-auto">
@@ -54,7 +54,14 @@
                     @enderror
                     <button class="btn btn-danger w-100 mt-3">Confirm</button>
                 </form>
-                
+                <hr>
+
+                <p class="fw-bold">Proof of Purchase:</p>
+                @if($proof == null)
+                <p class="fw-bold py-5 text-center">No Proof of Purchase</p>
+                @else
+                <img src="/public/storage/{{$proof}}" style="height: auto; width: 100%" alt="" class="img-fluid">
+                @endif
             </div>
         </div>
     </div>

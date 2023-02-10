@@ -80,6 +80,7 @@ class OrderController extends Controller
         $freebieIds = explode('*', $order->freebie_ids);
         $grandTotal = 0;
         $productList = array();
+        $proof = $order->proof_of_purchase;
         foreach($productIds as $key => $productId){
             $product = Product::where('id', $productId)->first();
             $quantity = $quantities[$key];
@@ -121,7 +122,7 @@ class OrderController extends Controller
             'orderlist' => $orderList,
             'total' => number_format($grandTotal, 2),
             'active' => 'show-order',
-            
+            'proof' => $proof
         ]);
     }
     public function adminOrders(){
