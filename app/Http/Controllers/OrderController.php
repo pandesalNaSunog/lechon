@@ -208,7 +208,6 @@ class OrderController extends Controller
         ]);
     }
     public function addProofOfPurchase(Order $order, Request $request){
-        dd($request->file('proof_of_purchase'));
         if($request->hasFile('proof_of_purchase')){
             $fields['proof_of_purchase'] = $request->file('proof_of_purchase')->store('images','public');
             $order->update($fields);
