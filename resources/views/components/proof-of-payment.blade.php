@@ -10,6 +10,7 @@
 @endif
 
 <form action="/orders/{{$order['id']}}/add-proof-of-purchase" method="POST">
+    @csrf
     <input type="file" name="proof_of_purchase" class="form-control">
     @error('proof_of_purchase')
     <x-error-text>{{$message}}</x-error-text>
