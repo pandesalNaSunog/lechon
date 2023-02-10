@@ -12,9 +12,9 @@
 <body class="bg-dark">
     <x-nav :active="$active"></x-nav>
     <x-sub-header :active="$active"></x-sub-header>
-
-    <div class="container">
-        <div class="bg-light py-4">
+    <div class="bg-light py-4">
+        <div class="container">
+        
             <div class="mx-auto card shadow col-lg-6">
                 <img src="policy.png" style="height: auto; width: 100%" alt="" class="card-img-top">
             </div>
