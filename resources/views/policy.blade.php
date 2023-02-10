@@ -13,8 +13,11 @@
     <x-nav :active="$active"></x-nav>
     <x-sub-header :active="$active"></x-sub-header>
 
-    <div class="mx-auto card shadow col-lg-6">
-        <img src="policy.png" style="height: auto; width: 100%" alt="" class="card-img-top">
+    <div class="bg-light py-4">
+        <div class="mx-auto card shadow col-lg-6">
+            <img src="policy.png" style="height: auto; width: 100%" alt="" class="card-img-top">
+        </div>
     </div>
+    
 </body>
 </html>
