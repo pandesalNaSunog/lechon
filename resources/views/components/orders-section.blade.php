@@ -38,6 +38,9 @@
                     </div>
                     <div class="card-footer">
                         <x-order-status :statuses="$order['statuses']"></x-order-status>
+                        <x-proof-of-payment>
+                            
+                        </x-proof-of-payment>
                     </div>
                 </div>
             </div>
