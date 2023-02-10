@@ -206,6 +206,15 @@ class OrderController extends Controller
             'orders' => $orders
         ]);
     }
+    public function addProofOfPurchase(Order $order, Request $request){
+        if($request->hasFile('proof_of_purchase')){
+            $fields['proof_of_purchase'] = $request->file('proof_of_purchase')->store('images','public');
+            $order->update($fields);
+            return back()->with('message', 'Proof of purchase has been added successfully');
+        }else{
+            return back()->withErrors(['proof_of_purchase' => 'Please choose a file']);
+        }
+    }
     public function confirmCheckout(Request $request){
         $fields = $request->validate([
             'delivery_address' => 'required'

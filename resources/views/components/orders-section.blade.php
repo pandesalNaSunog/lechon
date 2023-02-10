@@ -39,7 +39,7 @@
                     <div class="card-footer">
                         <x-order-status :statuses="$order['statuses']"></x-order-status>
                         <hr>
-                        <x-proof-of-payment :proof="$order['proof_of_purchase']">
+                        <x-proof-of-payment :proof="$order['proof_of_purchase']" :order="$order">
 
                         </x-proof-of-payment>
                     </div>
