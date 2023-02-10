@@ -6,7 +6,7 @@
 @if($proof != null)
 <img src="/public/storage/{{$order['proof_of_purchase']}}" class="img-fluid rounded-3" alt="" style="height: auto; width: 100%">
 
-<form action="/orders/{{$order['id']}}" method="POST">
+<form action="/orders/{{$order['id']}}/delete-proof-of-purchase" method="POST">
     @csrf
     @method('DELETE')
     <button class="btn btn-outline-danger mt-3 w-100" onclick="return confirm('Delete proof of purchase?')">Delete</button>
