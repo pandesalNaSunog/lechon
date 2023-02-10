@@ -67,6 +67,11 @@ Route::get('/logout',[UserController::class, 'customerLogout'])->middleware('aut
 Route::get('/profile',[UserController::class,'profile'])->middleware('auth');
 Route::get('/cart',[CartController::class, 'index'])->middleware('auth');
 Route::post('/cart/checkout', [OrderController::class, 'checkout'])->middleware('auth');
+Route::get('/policy', function(){
+    return view('policy', [
+        'active' => 'policy'
+    ]);
+});
 Route::get('/', function(){
     if(auth()->user() != null){
         if(auth()->user()->user_type == 'admin'){

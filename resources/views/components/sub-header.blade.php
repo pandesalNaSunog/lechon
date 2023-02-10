@@ -13,6 +13,8 @@
                 MY ORDERS
                 @elseif($active == 'pricelist')
                 PRICELIST
+                @elseif($active == 'policy')
+                POLICY
                 @endif
             </h1>
         </div>
