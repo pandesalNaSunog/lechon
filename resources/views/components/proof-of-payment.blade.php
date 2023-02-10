@@ -9,7 +9,7 @@
 <h6 class="fw-bold py-4 text-center">No Proof of Purchase</h6>
 @endif
 
-<form action="/orders/{{$order->id}}/add-proof-of-purchase" method="POST">
+<form action="/orders/{{$order['id']}}/add-proof-of-purchase" method="POST">
     <input type="file" name="proof_of_purchase">
     @error('proof_of_purchase')
     <x-error-text>{{$message}}</x-error-text>
