@@ -192,6 +192,7 @@ class OrderController extends Controller
                 ];
             }
             $orderList[] = [
+                'id' => $order->id,
                 'products' => $productList,
                 'date' => $order->created_at->format('M d, Y h:i A'),
                 'statuses' => $statuses,
