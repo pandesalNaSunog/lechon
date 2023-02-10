@@ -213,7 +213,7 @@ class OrderController extends Controller
             $order->update($fields);
             return back()->with('message', 'Proof of purchase has been added successfully');
         }else{
-            return back()->withErrors(['proof_of_purchase' => 'Please choose a file']);
+            return back()->with('message', 'Please choose a file');
         }
     }
     public function confirmCheckout(Request $request){
