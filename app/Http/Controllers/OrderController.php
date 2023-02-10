@@ -209,7 +209,11 @@ class OrderController extends Controller
     }
 
     public function deleteProofOfPurchase(Order $order){
-        $order->delete();
+
+        unlink('/public/storage/' . $order->proof_of_purchase);
+        $order->update([
+            'proof_of_purchase' => null
+        ]);
         return back()->with('message', 'Proof of purchase has been deleted');
     }
     public function addProofOfPurchase(Order $order, Request $request){
