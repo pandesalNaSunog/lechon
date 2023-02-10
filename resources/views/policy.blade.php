@@ -9,8 +9,10 @@
 
     <title>D' Original Lola Berta's Lechon | Policy</title>
 </head>
-<body>
+<body class="bg-dark">
     <x-nav :active="$active"></x-nav>
     <x-sub-header :active="$active"></x-sub-header>
+
+    
 </body>
 </html>
