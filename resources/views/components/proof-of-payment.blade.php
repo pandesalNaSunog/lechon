@@ -9,7 +9,7 @@
 <h6 class="fw-bold py-4 text-center">No Proof of Purchase</h6>
 @endif
 
-<form action="/orders/{{$order['id']}}/add-proof-of-purchase" method="POST">
+<form action="/orders/{{$order['id']}}/add-proof-of-purchase" enctype="multipart/form-data" method="POST">
     @csrf
     <input type="file" name="proof_of_purchase" class="form-control">
     <button class="btn btn-danger mt-3 w-100">Confirm</button>
