@@ -15,7 +15,8 @@ class Order extends Model
         'freebie_ids',
         'user_id',
         'order_type',
-        'delivery_address'
+        'delivery_address',
+        'proof_of_purchase'
     ];
 
     public function scopeFilter($query, array $filters){

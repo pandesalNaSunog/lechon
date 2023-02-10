@@ -164,7 +164,7 @@ class OrderController extends Controller
             $freebieIds = explode('*', $order->freebie_ids);
             $statuses = OrderStatus::where('order_id', $order->id)->get();
             $productList = array();
-
+            $proof = $order->proof_of_purchase;
             if($order->delivery_address == "Pickup"){
                 $deliveryAddress = "Pickup";
             }else{
@@ -195,7 +195,8 @@ class OrderController extends Controller
                 'products' => $productList,
                 'date' => $order->created_at->format('M d, Y h:i A'),
                 'statuses' => $statuses,
-                'delivery_address' => $deliveryAddress
+                'delivery_address' => $deliveryAddress,
+                'proof_of_purchase' => $proof
             ];
 
         }
